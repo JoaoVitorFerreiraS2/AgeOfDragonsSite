@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age of Dragons | Sistemas</title>
+    <link rel="stylesheet" href="css/sistemasStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Age of Dragons</h1>
+            <p class="tagline">Sistemas de Jogo</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="casas.html">Casas</a></li>
+            <li><a href="sistemas.html" class="active">Sistemas</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="menu">
+            <button class="menu-button" data-target="xp-up">XP e UP</button>
+            <button class="menu-button" data-target="habilidades-perks">Habilidades e Perks</button>
+            <button class="menu-button" data-target="dominio-dragoes">Domínio de Dragões</button>
+        </div>
+
+        <!-- Blocos de conteúdo -->
+        <section id="xp-up" class="content-block">
+            <h2>XP e UP</h2>
+            <p>
+                A evolução dos personagens é baseada em XP. Confira a tabela de evolução:
+            <ul>
+                <li>Nível 1 → 2: 100 XP</li>
+                <li>Nível 2 → 3: 200 XP</li>
+                <li>Nível 3 → 4: 300 XP</li>
+                <li>Nível 4 → 5: 400 XP</li>
+                <li>Nível 5 → 6: 500 XP</li>
+                <li>Nível 6 → 7: 600 XP</li>
+                <li>Nível 7 → 8: 700 XP</li>
+                <li>Nível 8 → 9: 800 XP</li>
+                <li>Nível 9 → 10: 900 XP</li>
+                <li>Nível 10+: 1000 XP por nível</li>
+            </ul>
+            </p>
+            <p>A cada 4 níveis, distribua +2 pontos de atributo.</p>
+
+            <!-- Soma de XP -->
+            <div class="accordion-item">
+                <div class="accordion-content">
+                    <p><strong>Regras de Progressão:</strong></p>
+                    <p>
+                        Nível 1 ao 2 ≈ 100xp<br>
+                        Nível 2 ao 3 ≈ 200xp<br>
+                        Nível 3 ao 4 ≈ 300xp<br>
+                        Nível 4 ao 5 ≈ 400xp<br>
+                        Nível 5 ao 6 ≈ 500xp<br>
+                        Nível 6 ao 7 ≈ 600xp<br>
+                        Nível 7 ao 8 ≈ 700xp<br>
+                        Nível 8 ao 9 ≈ 800xp<br>
+                        Nível 9 ao 10 ≈ 900xp<br>
+                        Nível 10 em diante ≈ 1000xp
+                    </p>
+                    <div class="inputs_inputs">
+                        <input type="number" name="currentLevel" id="currentLevel" placeholder="Seu Nível Atual">
+                        <input type="number" name="currentXP" id="currentXP" placeholder="Seu XP Atual">
+                        <input type="number" name="xp" id="xp" placeholder="Coloque o XP para Somar">
+                        <button type="button" onclick="addExperience()">Somar XP</button>
+                        <h3 id="currentLevelDisplay">Seu nível é: </h3>
+                        <h3 id="currentXPDisplay">XP Atual: </h3>
+                        <h4>Pontos de Atributo Ganhos: <span id="attributePoints">0</span></h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades-perks" class="content-block">
+            <h2>Habilidades e Perks</h2>
+
+            <p>Como em todo RPG de progressão por níveis que se preze, dispomos de um sistema de habilidades
+                cuidadosamente
+                desenvolvido para ser dinâmico e intuitivo. Baseado em pontos chamados "Perks", esse sistema permite que
+                os
+                jogadores adquiram habilidades à sua escolha conforme progridem no jogo. As árvores de habilidades estão
+                disponíveis na parte de baixo.</p>
+
+            <p>Os jogadores poderão reivindicar habilidades acumulando Perks através de batalhas, missões e eventos.
+                Além de
+                pagar o número correspondente de Perks, é necessário treinar a habilidade por meio de ao menos duas
+                cenas antes de
+                utilizá-la plenamente. Ressaltamos que, mesmo adquirindo múltiplas habilidades simultaneamente, o
+                treinamento será
+                limitado a uma por vez, com no máximo uma cena de treino por dia.</p>
+
+            <h4>ATENÇÃO:</h4>
+            <p>Todas as nossas habilidades, dons e formas de usar magia foram arquitetadas considerando um elemento
+                fundamental
+                para o player que as use: **o bom senso**. Isto é o mínimo que cobramos, uma linha de raciocínio
+                equilibrada e lógica.
+                As habilidades não poderão ser usadas em cenas subsequentes. Após uma cena de descanso sem uso, a
+                habilidade poderá
+                ser utilizada novamente.
+            
+                Qualquer dúvida, os ADM's estão a disposição.</p>
+
+            <div class="skill-accordion">
+
+                <h2>Habilidades iniciais</h2>
+                <!-- Força Desenvolvida -->
+                <div class="skill-item">
+                    <button class="skill-header">Força Desenvolvida</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <strong>Nível 1 - Força Desenvolvida:</strong>
+                                <p>Possui uma força notável, capaz de suportar grandes cargas e realizar feitos físicos
+                                    impressionantes para um humano comum, mas não chega a ser sobre-humana.</p>
+                                <p><em>Efeito:</em> Você pode aumentar sua força até 7, em vez do máximo habitual de
+                                    5.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Resiliência Aprimorada:</strong>
+                                <p>Além da força, desenvolve uma resistência maior a impactos físicos e fadiga,
+                                    permitindo realizar atividades físicas intensas por longos períodos sem se exaurir.
+                                </p>
+                                <p><em>Efeito:</em> Reduz o impacto de ataques físicos diretos em 30%.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Golpe Poderoso:</strong>
+                                <p>Pode concentrar toda sua força em um único golpe devastador, capaz de causar grande
+                                    destruição ou vencer adversários com defesas robustas.</p>
+                                <p><em>Efeito:</em> Seu ataque pode causar 50% de dano adicional** em uma cena.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Muralha Humana:</strong>
+                                <p>Seu corpo torna-se resistente a ataques de grande impacto, como explosões ou
+                                    projéteis pesados, reduzindo consideravelmente os danos recebidos.</p>
+                                <p><em>Efeito:</em> Reduz o dano de grandes impactos em 50%.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Força Sobrenatural:</strong>
+                                <p>Adquire força sobre-humana por um breve período, capaz de levantar objetos imensos e
+                                    causar destruição significativa.</p>
+                                <p><em>Efeito:</em> Durante uma cena, sua força aumenta para **10**, permitindo feitos
+                                    excepcionais como destruir estruturas pesadas ou arremessar objetos massivos.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Colosso:</strong>
+                                <p>Transforma-se em um ser colossal, com força e resistência incríveis. É capaz de
+                                    destruir grandes estruturas ou derrotar grupos inteiros com golpes devastadores.</p>
+                                <p><em>Efeito:</em> Por uma cena, você alcança força 15, destrói obstáculos
+                                    monumentais e resiste a quase qualquer ataque físico.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Montagem Homérica</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <strong>Nível 1 - Controle Básico (Passiva):</strong>
+                                <p>Você pode montar e controlar criaturas, incluindo dragões jovens ou domesticados.
+                                    Ganha um entendimento básico de como lidar com essas montarias.</p>
+                                <p><em>Efeito:</em> Permite montar criaturas comuns ou jovens com eficiência básica.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Cavaleiro Experiente (Passiva):</strong>
+                                <p>Seu vínculo com sua montaria melhora, permitindo realizar manobras mais avançadas e
+                                    mantendo maior estabilidade mesmo em situações difíceis.</p>
+                                <p><em>Efeito:</em> Você pode realizar manobras complexas em montarias com segurança,
+                                    como evasões e pousos rápidos.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Domador de Dragões (Ativa):</strong>
+                                <p>Seu domínio sobre montarias permite estabelecer um vínculo forte com dragões maduros,
+                                    tornando-os aliados confiáveis em combate e exploração.</p>
+                                <p><em>Efeito:</em> Você pode domar dragões maiores e usar suas habilidades especiais
+                                    durante cenas de combate ou exploração.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Mestre da Montaria (Passiva):</strong>
+                                <p>Você se torna referência em domínio de montarias, permitindo que suas criaturas
+                                    realizem feitos incríveis, como voos em terrenos perigosos ou manobras impossíveis
+                                    para cavaleiros comuns.</p>
+                                <p><em>Efeito:</em> Suas montarias podem realizar feitos excepcionais, como voar em
+                                    tempestades ou atravessar terrenos hostis com facilidade.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Lenda Equestre (Ativa):</strong>
+                                <p>Você e sua montaria agem como uma única unidade perfeita, realizando ataques
+                                    combinados devastadores ou escapando de situações extremamente perigosas.</p>
+                                <p><em>Efeito:</em> Por uma cena, você e sua montaria ganham sinergia total, permitindo
+                                    realizar ataques combinados ou realizar manobras de fuga épicas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Guardião dos Céus (Ativa):</strong>
+                                <p>Seu domínio absoluto sobre as montarias permite liderar dragões lendários em combate
+                                    ou guiar outras montarias em missões de grande escala.</p>
+                                <p><em>Efeito:</em> Por uma cena, lidera montarias lendárias e comanda ações coordenadas
+                                    em combates ou missões.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Conhecimentos Medicinais</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <strong>Nível 1 - Primeiros Socorros:</strong>
+                                <p>Você tem habilidades básicas de curar ferimentos leves e estabilizar aliados feridos.
+                                </p>
+                                <p><em>Efeito:</em> Permite estabilizar aliados caídos e tratar ferimentos superficiais.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Curandeiro Experiente:</strong>
+                                <p>Seus conhecimentos permitem tratar doenças comuns e envenenamentos básicos, além de
+                                    acelerar a recuperação de aliados feridos.</p>
+                                <p><em>Efeito:</em> Cura doenças simples e reduz o tempo de recuperação de ferimentos
+                                    leves em cenas futuras.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Mestre dos Antídotos:</strong>
+                                <p>Você desenvolve antídotos eficazes contra venenos mais complexos e pode tratar
+                                    ferimentos graves com maior eficiência.</p>
+                                <p><em>Efeito:</em> Permite criar antídotos e tratar ferimentos graves em aliados.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Alquimista Medicinal:</strong>
+                                <p>Você domina a criação de poções medicinais e bálsamos avançados que aceleram
+                                    drasticamente a cura e restauram energias.</p>
+                                <p><em>Efeito:</em> Pode criar poções avançadas para cura e recuperação de energia.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Guardião da Vida:</strong>
+                                <p>Você é capaz de salvar vidas em situações extremas, revertendo ferimentos fatais com
+                                    sua maestria medicinal.</p>
+                                <p><em>Efeito:</em> Uma vez por cena, salva um aliado de um estado de morte iminente.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Avatar da Cura:</strong>
+                                <p>Seu conhecimento medicinal atinge um nível divino, permitindo que você cure grupos
+                                    inteiros e reverta condições críticas de forma milagrosa.</p>
+                                <p><em>Efeito:</em> Por uma cena, cura todos os aliados próximos e remove condições
+                                    debilitantes severas.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Sangue Landforniano</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 10 Perks</p>
+                                <p><strong>Requisito:</strong> Ser membro da Casa Landfor Atlas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Herança Landforniana (Passiva):</strong>
+                                <p>O sangue da Casa Landfor concede resistência natural contra doenças e toxinas. Sua herança também o torna mais respeitado entre os membros de sua linhagem.</p>
+                                <p><em>Efeito:</em> Imune a doenças comuns. Você pode resistir a venenos leves com facilidade e recebe respeito entre os membros da Casa Landfor.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Sangue de Ferro (Passiva):</strong>
+                                <p>Seu corpo se torna naturalmente mais robusto, resistindo a ferimentos leves e se recuperando de esforços físicos rapidamente.</p>
+                                <p><em>Efeito:</em> Reduz o impacto de ferimentos leves e permite recuperação natural mais eficiente entre cenas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Espírito Indomável (Ativa):</strong>
+                                <p>Por meio da força ancestral em seu sangue, você consegue resistir a ataques mentais e envenenamentos graves que derrotariam outros.</p>
+                                <p><em>Efeito:</em> Durante uma cena, você ignora completamente os efeitos de manipulações mentais ou venenos graves.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Guardião dos Ancestrais (Passiva):</strong>
+                                <p>Seu sangue conecta você aos ancestrais de Landfor, fortalecendo sua mente e corpo. Sua presença inspira aliados a lutar com mais coragem.</p>
+                                <p><em>Efeito:</em> Torna-se resistente a ataques físicos e mentais, e aliados próximos sentem-se inspirados, enfrentando perigos com mais determinação.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Escudo de Landfor (Ativa):</strong>
+                                <p>Ao evocar o poder ancestral, você age como um protetor para seus aliados, suportando golpes que seriam fatais para outros.</p>
+                                <p><em>Efeito:</em> Durante uma cena, absorve danos direcionados a aliados próximos, fortalecendo sua presença protetora em combate.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Avatar de Landfor (Ativa):</strong>
+                                <p>O ápice do poder ancestral desperta, transformando-o em um símbolo vivo da Casa Landfor. Sua força e resistência atingem um nível lendário, inspirando todos ao seu redor.</p>
+                                <p><em>Efeito:</em> Durante uma cena, torna-se imune a ataques diretos e inspira aliados próximos a se superarem em combate ou desafios.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Pés Ligeiros</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 10 Perks</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Pés Ligeiros (Passiva):</strong>
+                                <p>Você desenvolve a capacidade de se mover silenciosamente, evitando detecção ao caminhar ou correr.</p>
+                                <p><em>Efeito:</em> Seus movimentos não produzem ruído perceptível, facilitando infiltrações e fugas discretas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Passagem Silenciosa (Passiva):</strong>
+                                <p>Aprimora sua furtividade, permitindo que você passe por áreas controladas sem ser percebido, mesmo em patrulhas rigorosas.</p>
+                                <p><em>Efeito:</em> Você pode evitar detecção em áreas com guardas atentos, desde que não interfira no ambiente.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Movimentos Espectrais (Ativa):</strong>
+                                <p>Você pode mover-se rapidamente de um local para outro, quase como um espectro, tornando difícil rastrear sua posição.</p>
+                                <p><em>Efeito:</em> Durante uma cena, você pode se deslocar de forma quase invisível e indetectável.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Passagem Fantasma (Ativa):</strong>
+                                <p>Utilizando técnicas avançadas, você pode atravessar barreiras sólidas como portas e paredes finas sem esforço.</p>
+                                <p><em>Efeito:</em> Permite atravessar barreiras físicas leves durante uma cena, facilitando infiltrações.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Mestre da Furtividade (Passiva):</strong>
+                                <p>Você atinge um nível de furtividade tão elevado que quase ninguém consegue detectá-lo, mesmo em condições adversas.</p>
+                                <p><em>Efeito:</em> Você evita detecção em praticamente todas as situações, exceto em magia de rastreamento avançada.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Sombra Invisível (Ativa):</strong>
+                                <p>Você se torna um mestre absoluto das sombras, movendo-se de forma completamente invisível e intangível enquanto estiver em áreas sombreadas.</p>
+                                <p><em>Efeito:</em> Durante uma cena, você se torna invisível e intangível em locais sombreados, permitindo infiltrações ou fugas perfeitas.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Maestria com Espadas</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 10 Perks</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Maestria com Espada (Passiva):</strong>
+                                <p>Seu treinamento inicial permite golpes mais precisos e controle sobre a espada, tornando-a uma extensão natural de seu corpo.</p>
+                                <p><em>Efeito:</em> Ganha +1 em testes de precisão ao usar espadas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Dança das Lâminas (Ativa):</strong>
+                                <p>Executa uma sequência de golpes rápidos em combate, tornando mais difícil para os inimigos reagirem adequadamente.</p>
+                                <p><em>Efeito:</em> Durante uma cena, realiza dois ataques rápidos consecutivos contra um único inimigo.</p>
+                                <p><em>Bônus:</em> Ganha +1 adicional em testes de precisão ao usar espadas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Contra-ataque Perfeito (Passiva):</strong>
+                                <p>Desenvolve reflexos avançados, permitindo reagir a ataques e desferir um contra-ataque imediatamente.</p>
+                                <p><em>Efeito:</em> Após uma esquiva bem-sucedida, pode realizar um contra-ataque imediato.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Tempestade de Aço (Ativa):</strong>
+                                <p>Você gira com sua espada, atingindo múltiplos inimigos próximos em um movimento fluido e poderoso.</p>
+                                <p><em>Efeito:</em> Durante uma cena, pode atingir até dois inimigos próximos em um único movimento.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Mestre das Lâminas (Passiva):</strong>
+                                <p>Seu domínio absoluto sobre espadas torna seus ataques mais confiáveis e difíceis de bloquear, independentemente da situação.</p>
+                                <p><em>Efeito:</em> Ganha +1 adicional em testes de ataque e reduz penalidades em situações adversas ao usar espadas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Espadachim Lendário (Ativa):</strong>
+                                <p>Você alcança o auge de sua arte com espadas, realizando ataques quase impossíveis que parecem romper as leis da física.</p>
+                                <p><em>Efeito:</em> Durante uma cena, seus ataques ignoram defesas comuns e são considerados golpes críticos automáticos.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Maestria com Lanças</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 10 Perks</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Maestria com Lanças (Passiva):</strong>
+                                <p>Seu treinamento inicial com lanças permite ataques mais precisos e controlados, ideais tanto para combates à distância quanto corpo a corpo.</p>
+                                <p><em>Efeito:</em> Ganha +1 em testes de precisão ao usar lanças.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Arremesso Focado (Ativa):</strong>
+                                <p>Você desenvolve a habilidade de arremessar lanças com precisão excepcional, tornando-as armas eficazes em combates à distância.</p>
+                                <p><em>Efeito:</em> Durante uma cena, realiza um arremesso de lança que ignora barreiras leves, atingindo alvos em cobertura parcial.</p>
+                                <p><em>Bônus:</em> Ganha +1 adicional em ataques à distância ao usar lanças.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Defesa Perfeita (Passiva):</strong>
+                                <p>Seu domínio com lanças permite usá-las como ferramentas de defesa, bloqueando ataques com maior eficiência.</p>
+                                <p><em>Efeito:</em> Adiciona um bônus defensivo ao bloquear ou desviar golpes em combate.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Golpe Voraz (Ativa):</strong>
+                                <p>Com um movimento fluido e poderoso, você desfere um ataque que atravessa múltiplos inimigos alinhados.</p>
+                                <p><em>Efeito:</em> Durante uma cena, pode atacar até dois inimigos em linha reta com um único golpe.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Mestre das Lanças (Passiva):</strong>
+                                <p>Seu domínio absoluto com lanças permite realizar ataques com precisão cirúrgica e manipular a arma em situações adversas.</p>
+                                <p><em>Efeito:</em> Ganha +1 adicional em testes de ataque e reduz penalidades ao usar lanças em terrenos difíceis.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Lança Suprema (Ativa):</strong>
+                                <p>Você alcança a maestria máxima com lanças, realizando um ataque lendário capaz de perfurar defesas mais robustas.</p>
+                                <p><em>Efeito:</em> Durante uma cena, realiza um ataque que ignora armaduras pesadas e causa dano crítico automático.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Maestria em Arco e Flecha</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 10 Perks</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Mira Instintiva (Passiva):</strong>
+                                <p>Você desenvolve um instinto natural para tiros rápidos e precisos, mesmo sob pressão.</p>
+                                <p><em>Efeito:</em> Ganha +1 em testes de precisão ao usar arco e flecha.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Tiro Certeiro (Ativa):</strong>
+                                <p>Você concentra toda sua atenção em um único disparo, aumentando a chance de acertar áreas vitais do inimigo.</p>
+                                <p><em>Efeito:</em> Durante uma cena, realiza um disparo que ignora penalidades por distância e aumenta a chance de causar dano elevado.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Flecha Curva (Passiva):</strong>
+                                <p>Você aprende a manipular o arco para realizar disparos que contornam obstáculos, tornando impossível se esconder de você.</p>
+                                <p><em>Efeito:</em> Permite disparar flechas que ignoram coberturas leves e médias.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Flecha Explosiva (Ativa):</strong>
+                                <p>Com a preparação certa, você dispara uma flecha especial que explode ao impacto, causando dano em área.</p>
+                                <p><em>Efeito:</em> Durante uma cena, dispara uma flecha que causa dano a inimigos em um raio próximo ao ponto de impacto.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Atirador Fantasma (Passiva):</strong>
+                                <p>Seu domínio absoluto sobre o arco permite realizar disparos rápidos e precisos em movimento, sem perder eficácia.</p>
+                                <p><em>Efeito:</em> Ganha +1 adicional em ataques com arco e ignora penalidades ao atacar em movimento.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Flecha do Destino (Ativa):</strong>
+                                <p>Você canaliza toda a sua habilidade em um disparo lendário, capaz de perfurar qualquer defesa e atingir o coração de seu alvo.</p>
+                                <p><em>Efeito:</em> Durante uma cena, dispara uma única flecha com precisão absoluta, ignorando todas as defesas e causando dano crítico.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Alquimia Avançada</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 10 Perks</p>
+                            </li>
+                            <li>
+                                <p><strong>Como funciona:</strong></p>
+                                <p>As poções vão da imaginação do jogador se assim o ADM permitir e se não for determinada por um nível</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Fundamentos da Alquimia (Passiva):</strong>
+                                <p>Você aprende os princípios básicos da alquimia, permitindo criar poções simples e venenos fracos.</p>
+                                <p><em>Efeito:</em> Pode preparar venenos básicos (como veneno paralisante leve) e poções simples de cura ou energia.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Explosivos Artesanais (Passiva):</strong>
+                                <p>Com conhecimentos mais avançados, você aprende a criar explosivos simples como molotovs e bombas incendiárias.</p>
+                                <p><em>Efeito:</em> Permite fabricar molotovs e pequenas bombas incendiárias com materiais acessíveis.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Poção de Inutilização (Ativa):</strong>
+                                <p>Você desenvolve um veneno avançado que afeta armas e causa grande dificuldade aos inimigos ao entrar em contato.</p>
+                                <p><em>Efeito:</em> Pode envenenar armas com venenos mais fortes, causando efeitos como lentidão ou confusão durante uma cena.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Poção de Invisibilidade (Ativa):</strong>
+                                <p>Com técnica aprimorada, você cria uma poção que torna você ou um aliado invisível por um curto período.</p>
+                                <p><em>Efeito:</em> Torna o usuário invisível durante uma cena, ideal para infiltrações ou fugas.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Veneno Letal (Passiva):</strong>
+                                <p>Você aprende a fabricar venenos letais que podem incapacitar ou até eliminar alvos com eficiência.</p>
+                                <p><em>Efeito:</em> Permite preparar venenos poderosos que causam dano contínuo ou paralisia grave.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Alquimista Supremo (Ativa):</strong>
+                                <p>Você alcança a maestria total, permitindo combinar suas criações em efeitos devastadores e únicos.</p>
+                                <p><em>Efeito:</em> Durante uma cena, combina venenos, explosivos e poções para criar efeitos personalizados, como uma bomba venenosa ou poção de resistência.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <button class="skill-header">Proteção Divina</button>
+                    <div class="skill-content">
+                        <ul class="skill-tree">
+                            <li>
+                                <p><strong>Custo:</strong> 20 Perks</p>
+                                <p><strong>Requisito:</strong> Ser sacerdote de alguma divindade.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 1 - Benção Menor (Passiva):</strong>
+                                <p>A proteção básica de sua divindade reduz o impacto de ataques simples e dá maior resistência a condições adversas.</p>
+                                <p><em>Efeito:</em> Reduz levemente o dano de ataques e oferece resistência contra venenos leves.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 5 - Escudo Divino (Ativa):</strong>
+                                <p>Você invoca um escudo de energia divina para proteger a si mesmo ou a um aliado.</p>
+                                <p><em>Efeito:</em> Durante uma cena, bloqueia completamente um ataque direcionado ao protegido.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 10 - Purificação (Ativa):</strong>
+                                <p>Canaliza a energia de sua divindade para remover condições negativas de aliados próximos.</p>
+                                <p><em>Efeito:</em> Cura aliados de efeitos como venenos, doenças ou estados de enfraquecimento.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 20 - Aura de Proteção (Passiva):</strong>
+                                <p>Uma aura divina constante emana de você, oferecendo proteção contínua para aliados próximos.</p>
+                                <p><em>Efeito:</em> Aliados próximos reduzem levemente o dano recebido em combate.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 30 - Barreira Celestial (Ativa):</strong>
+                                <p>Cria uma barreira divina que protege todos dentro de uma pequena área de ataques externos.</p>
+                                <p><em>Efeito:</em> Durante uma cena, bloqueia completamente ataques direcionados à área protegida.</p>
+                            </li>
+                            <li>
+                                <strong>Nível 50 - Intervenção Divina (Ativa):</strong>
+                                <p>Você invoca diretamente a força de sua divindade, protegendo seus aliados e incapacitando inimigos com presença maligna.</p>
+                                <p><em>Efeito:</em> Durante uma cena, todos os aliados ficam imunes a ataques diretos, e inimigos malignos próximos são desabilitados temporariamente.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+        </section>
+
+
+        <section id="dominio-dragoes" class="content-block">
+            <h2>Domínio de Dragões</h2>
+            <p>
+                Os jogadores podem treinar e criar dragões, formando vínculos que influenciam diretamente a
+                jogabilidade. Dragões evoluem com o personagem, ganhando habilidades únicas.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 <a href="" style="text-decoration: none; color: #ef8e38; font-weight: bold;">João Vitor
+                Ferreira</a>. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/menuToggle.js"></script>
+    <script src="js/sistemasXp.js"></script>
+</body>
+
+</html>
+
+<script>
+    document.querySelectorAll('.skill-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+
+            // Alterna a visibilidade do conteúdo
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
