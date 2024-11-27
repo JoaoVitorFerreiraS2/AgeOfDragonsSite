@@ -1,0 +1,109 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #6a1b9a, #4527a0);
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+}
+
+/* Seção das casas */
+.houses-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.house {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.house:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.house img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.house h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+
+.short-description,
+.full-description {
+    padding: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #bdbdbd;
+}
+
+.full-description {
+    display: none;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #1e1e1e;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .house {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .house h3 {
+        font-size: 1.2rem;
+    }
+
+    .short-description,
+    .full-description {
+        font-size: 0.9rem;
+    }
+}
