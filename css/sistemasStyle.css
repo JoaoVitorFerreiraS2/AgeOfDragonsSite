@@ -7,6 +7,10 @@ body {
     line-height: 1.6;
 }
 
+body li{
+    list-style: none;
+}
+
 /* Header */
 header {
     background: url('https://i.imgur.com/2z8w7gC.jpg') no-repeat center center/cover;
