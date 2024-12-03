@@ -229,6 +229,7 @@ section p {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
     margin: 20px 0;
 }
 
@@ -479,9 +480,6 @@ section p {
     margin: 5px 0 0 10px;
     color: #dcdcdc;
 }
-
-
-
 
 
 
