@@ -481,6 +481,56 @@ section p {
     color: #dcdcdc;
 }
 
+/* General styling for the section */
+#map {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container for the map with zoom support */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.map-container:hover{
+    transition: 1s;
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+
+.map-container img {
+    width: 100%;
+    max-width: none; 
+    transform-origin: center center; 
+    cursor: grab; 
+}
+
+/* Zoom interaction styles */
+.map-container:active img {
+    cursor: grabbing;
+}
+
+/* Optional smooth scroll for a better experience */
+.map-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.map-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.map-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
 
 
 
